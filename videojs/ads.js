@@ -18,11 +18,7 @@ var player = videojs('content_video');
 
 var options = {
   id: 'content_video',
-  adTagUrl: 'http://pubads.g.doubleclick.net/gampad/ads?sz=640x480&' +
-      'iu=/124319096/external/ad_rule_samples&ciu_szs=300x250&ad_rule=1&' +
-      'impl=s&gdfp_req=1&env=vp&output=xml_vmap1&unviewed_position_start=1&' +
-      'cust_params=sample_ar%3Dpremidpostpod%26deployment%3Dgmf-js&cmsid=496&' +
-      'vid=short_onecue&correlator='
+  adTagUrl: 'https://googleads.g.doubleclick.net/pagead/ads?ad_type=video_text_image&client=ca-video-pub-4968145218643279&videoad_start_delay=0&description_url=http%3A%2F%2Fwww.google.com&max_ad_duration=30000&adtest=on'
 };
 
 player.ima(options);
