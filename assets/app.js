@@ -68,13 +68,7 @@ upload.prepareDropzone = function(){
 	});
 
 	dropzone.on('success', function(file, response) {
-		if (response.success === false) {
-			var p = document.createElement('p');
-			p.innerHTML = response.description;
-			file.previewTemplate.querySelector('.link').appendChild(p);
-		}
-
-		if (response.url) {
+		if (response.success) {
 			a = document.createElement('a');
 			a.href = response.url;
 			a.target = '_blank';
@@ -82,7 +76,11 @@ upload.prepareDropzone = function(){
 			file.previewTemplate.querySelector('.link').appendChild(a);
 			file.previewTemplate.querySelector('.progress').style.display = 'none';
 		}
-		
+		if (!response.success) {
+			var p = document.createElement('p');
+			p.innerHTML = response.error;
+			file.previewTemplate.querySelector('.link').appendChild(p);
+		}		
 	});
 };
 
