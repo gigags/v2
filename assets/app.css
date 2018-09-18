@@ -19,6 +19,11 @@ section#home #b {
 	box-shadow: 0 20px 60px rgba(10, 10, 10, 0.05), 0 5px 10px rgba(10, 10, 10, 0.1), 0 1px 1px rgba(10, 10, 10, 0.2);
 }
 
+.title {
+	font-size: 6rem !important;
+	font-weight: 400 !important;
+}
+
 .hero.is-fullheight {
     min-height: 90vh;
 }
