@@ -1,7 +1,7 @@
 var upload = {}, ggApiAddr = '//api.giga.gs';
 
 upload.isPrivate = true;
-upload.token = localStorage.token;
+upload.token;
 upload.maxFileSize;
 upload.myDropzone;
 
@@ -9,8 +9,9 @@ upload.sessionCheck = function(){
 	axios.get(ggApiAddr + '/session')
 	.then(function (response) {
 		upload.isPrivate= response.data.private;
+		upload.token = response.data.token;
 		upload.maxFileSize = response.data.maxFileSize;
-		upload.preparePage();
+		upload.prepareUpload();
 	})
 	.catch(function (error) {
 		swal("An error ocurred", 'There was an error with the request, please check the console for more information.', "error");
@@ -18,59 +19,18 @@ upload.sessionCheck = function(){
 	});
 }
 
-upload.preparePage = function(){
-	if(!upload.isPrivate) return upload.prepareUpload();
-	if(!upload.token) return document.getElementById('loginToUpload').style.display = 'inline-flex';
-	upload.verifyToken(upload.token, true);
-};
-
-upload.verifyToken = function(token, reloadOnError){
-	if(reloadOnError === undefined)
-		reloadOnError = false;
-	
-	axios.post(ggApiUrl + '/token/verify', {
-		token: token
-	})
-	.then(function (response) {
-		if(response.data.success === false){
-			swal({
-				title: "An error ocurred", 
-				text: response.data.description, 
-				type: "error"
-			}, function(){
-				if(reloadOnError){
-					localStorage.removeItem("token");
-					location.reload();
-				}
-			});
-			return;
-		}
-
-		localStorage.token = token;
-		upload.token = token;
-		return upload.prepareUpload();
-
-	})
-	.catch(function (error) {
-		swal("An error ocurred", 'There was an error with the request, please check the console for more information.', "error");
-		return console.log(error);
-	});
-
-};
-
 upload.prepareUpload = function(){
 	div = document.createElement('div');
 	div.id = 'dropzone';
 	div.innerHTML = 'Click here or drag and drop files';
 	div.style.display = 'flex';
-
+	document.getElementById('uploadContainer').appendChild(div);
 	document.getElementById('maxFileSize').innerHTML = 'Maximum upload size per file is ' + upload.maxFileSize;
-	document.getElementById('loginToUpload').style.display = 'none';
+	upload.prepareDropzone();	
 	
-	if(upload.token === undefined) 
-		document.getElementById('loginLinkText').innerHTML = 'Create an account and keep track of your uploads';
-    document.getElementById('uploadContainer').appendChild(div);
-		upload.prepareDropzone();
+	if(upload.isPrivate) {
+		document.getElementById('loginToUpload').style.display = 'block'
+	}
 };
 
 upload.prepareDropzone = function(){
