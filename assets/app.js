@@ -42,6 +42,7 @@ upload.prepareDropzone = function(){
 	var dropzone = new Dropzone('div#dropzone', { 
 		url: upload.api + '/upload',
 		paramName: 'file',
+		acceptedFiles: 'video/mp4',
 		maxFilesize: upload.maxFileSize.slice(0, -2),
 		parallelUploads: 2,
 		uploadMultiple: false,
