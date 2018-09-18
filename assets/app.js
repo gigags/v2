@@ -6,7 +6,7 @@ upload.maxFileSize;
 upload.myDropzone;
 
 upload.sessionCheck = function(){
-	axios.get(ggApiAddr + '/sessionCheck')
+	axios.get(ggApiAddr + '/session')
 	.then(function (response) {
 		upload.isPrivate= response.data.private;
 		upload.maxFileSize = response.data.maxFileSize;
