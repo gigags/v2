@@ -37,12 +37,16 @@
         <div class="content">
           <h2 class="title">API</h2>
           <div class="box">
-          <h4>UPLOAD REQUEST</h4>
-          <p>The base URL to upload your file is <code>https://api.giga.gs/upload</code> provided with the public or your private </code>token</code>.</p>
-          <p>The <code>token</code> can be use in HEADER / POST / GET parameter</p>
-      <h4>BASIC EXAMPLE <code>$token</code> as variable</h4>
-          <code>$ curl -F file=@"/path/of/your/file.mp4" api.giga.gs/upload?token=$token</code>
-          <code>$ curl -F file=@"/path/to/your/file.mp4" -H 'token: $token' api.giga.gs/upload</code>
+            <h4>UPLOAD REQUEST</h4>
+            <p>The base URL to upload your file is <code>https://api.giga.gs/upload</code> provided with the public or your private <code>token</code>.</p>
+            <p>The <code>token</code> can be use in HEADER / POST / GET parameter</p>
+            <h4>BASIC EXAMPLE <code>$token</code> as variable</h4>
+            <code>$ curl -F file=@"/path/of/your/file.mp4" api.giga.gs/upload?token=$token</code>
+            <br/>
+            <code>$ curl -F file=@"/path/to/your/file.mp4" -H 'token: $token' api.giga.gs/upload</code>
+            <h4>UPLOAD RESPONSE</h4>
+            <a href="//api.giga.gs/upload" target="_blank">CLICK HERE TO VIEW</a>
+            <p>The response is as is. The response <span class="tag is-info">success</span> is boolean and if <span class="tag is-success">true</span> the <span class="tag is-info">url</span> will be replaced with a direct link of the uploaded file.</p>
           </div>
         </div>
       </div>
