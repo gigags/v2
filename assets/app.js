@@ -1,12 +1,12 @@
-var upload = {}, ggApiAddr = '//api.giga.gs';
-
+var upload = {};
+upload.api = '//api.giga.gs';
 upload.isPrivate = true;
 upload.token;
 upload.maxFileSize;
 upload.myDropzone;
 
 upload.sessionCheck = function(){
-	axios.get(ggApiAddr + '/session')
+	axios.get( upload.api + '/session')
 	.then(function (response) {
 		upload.isPrivate= response.data.private;
 		upload.token = response.data.token;
@@ -40,7 +40,7 @@ upload.prepareDropzone = function(){
 	previewNode.parentNode.removeChild(previewNode);
 
 	var dropzone = new Dropzone('div#dropzone', { 
-		url: ggApiUrl + '/upload',
+		url: upload.api + '/upload',
 		paramName: 'files[]',
 		maxFilesize: upload.maxFileSize.slice(0, -2),
 		parallelUploads: 2,
