@@ -41,14 +41,14 @@ upload.prepareDropzone = function(){
 
 	var dropzone = new Dropzone('div#dropzone', { 
 		url: upload.api + '/upload',
-		paramName: 'files[]',
+		paramName: 'file',
 		maxFilesize: upload.maxFileSize.slice(0, -2),
 		parallelUploads: 2,
 		uploadMultiple: false,
 		previewsContainer: 'div#uploads',
 		previewTemplate: previewTemplate,
 		createImageThumbnails: false,
-		maxFiles: 1000,
+		maxFiles: 10,
 		autoProcessQueue: true,
 		headers: {
 			'token': upload.token
