@@ -76,7 +76,7 @@ upload.prepareDropzone = function(){
 			file.previewTemplate.querySelector('.link').appendChild(a);
 			file.previewTemplate.querySelector('.progress').style.display = 'none';
 		}
-		if (!response.success) {
+		else {
 			var p = document.createElement('p');
 			p.innerHTML = response.error;
 			file.previewTemplate.querySelector('.link').appendChild(p);
