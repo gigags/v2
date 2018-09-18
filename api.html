@@ -41,13 +41,14 @@
             <p>The base URL to upload your file is <code>https://api.giga.gs/upload</code> provided with the public or your private <code>token</code>.</p>
             <p>The <code>token</code> can be use in HEADER / POST / GET parameter</p>
             <h4>BASIC EXAMPLE</h4>
-            <p><code>$token</code> as variable</p>
+            <p><code>$token</code> as variable.</p>
             <code>$ curl -F file=@"/path/of/your/file.mp4" api.giga.gs/upload?token=$token</code>
             <br/>
             <code>$ curl -F file=@"/path/to/your/file.mp4" -H 'token: $token' api.giga.gs/upload</code>
             <hr/>
             <h4>UPLOAD RESPONSE</h4>
-            <div><a class="button is-primary" href="//api.giga.gs/upload" target="_blank">CLICK HERE TO VIEW</a></div>
+            <a class="button is-primary" href="//api.giga.gs/upload" target="_blank">CLICK HERE TO VIEW</a>
+            <br/><br/>
             <p>The response is as is. The response <code>success</code> is boolean and if <code>true</code> the <code>url</code> will be replaced with a direct link of the uploaded file.</p>
           </div>
         </div>
