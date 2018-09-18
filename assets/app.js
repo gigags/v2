@@ -28,7 +28,7 @@ upload.prepareUpload = function(){
 	document.getElementById('maxFileSize').innerHTML = 'Maximum upload size per file is ' + upload.maxFileSize;
 	upload.prepareDropzone();	
 	
-	if(upload.isPrivate) {
+	if(!upload.isPrivate) {
 		document.getElementById('loginToUpload').style.display = 'block'
 	}
 };
