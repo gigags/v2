@@ -22,6 +22,7 @@ section#home #b {
 .title {
 	font-size: 6rem !important;
 	font-weight: 400 !important;
+	line-height: 2 !important;
 }
 
 .hero.is-fullheight {
