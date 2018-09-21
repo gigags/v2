@@ -32,7 +32,8 @@ upload.prepareUpload = function(){
 		upload.prepareDropzone(response.data.url);
 	})
 	.catch(function(error){
-		swal('An error occured','There was an error with the upload server, please check the console for more information.','error');
+		swal('An error occured','There was an error with the upload server. Reloading the page.','error');
+		window.location.reload();
 		return console.log(error);
 	});	
 	
