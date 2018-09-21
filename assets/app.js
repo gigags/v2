@@ -27,7 +27,7 @@ upload.prepareUpload = function(){
 	document.getElementById('uploadContainer').appendChild(div);
 	document.getElementById('maxFileSize').innerHTML = 'Maximum upload size per file is ' + upload.maxFileSize;
 	
-	axios.get(upload.api+'/upload?token='+upload.token)
+	axios.get(upload.api+'/getUploadUrl?token='+upload.token)
 	.then(function(response){
 		upload.prepareDropzone(response.data.url);
 	})
