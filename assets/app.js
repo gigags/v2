@@ -26,21 +26,29 @@ upload.prepareUpload = function(){
 	div.style.display = 'flex';
 	document.getElementById('uploadContainer').appendChild(div);
 	document.getElementById('maxFileSize').innerHTML = 'Maximum upload size per file is ' + upload.maxFileSize;
-	upload.prepareDropzone();	
+	
+	axios.get(upload.api+'/upload?token='+upload.token)
+	.then(function(response){
+		upload.prepareDropzone(response.data.url);
+	})
+	.catch(function(error){
+		swal('An error occured','There was an error with the upload server, please check the console for more information.','error');
+		return console.log(error);
+	});	
 	
 	if(!upload.isPrivate) {
 		document.getElementById('loginToUpload').style.display = 'block'
 	}
 };
 
-upload.prepareDropzone = function(){
+upload.prepareDropzone = function(uploadUrl){
 	var previewNode = document.querySelector('#template');
 	previewNode.id = '';
 	var previewTemplate = previewNode.parentNode.innerHTML;
 	previewNode.parentNode.removeChild(previewNode);
 
 	var dropzone = new Dropzone('div#dropzone', { 
-		url: upload.api + '/upload',
+		url: uploadUrl,
 		paramName: 'file',
 		acceptedFiles: 'video/mp4',
 		maxFilesize: upload.maxFileSize.slice(0, -2),
