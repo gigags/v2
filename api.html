@@ -33,12 +33,16 @@
     <section class="section">
       <div class="container">
         <div class="content">
-          <h2 class="title">API</h2>
           <div class="box">
+            <h2 class="title">API</h2>
+            <p>Note: String begin with <code>$</code> is to be determine, a variable.</p>
+            <hr/>
             <h4>REQUESTING UPLOAD URL</h4>
             <p>The basic method to upload a file is to get the upload URL by requesting <code>https://api.giga.gs/getUploadUrl</code> provided with the public or your private <code>token</code>.</p>
+            <h6>Example:</h6>
+            <code>$ curl https//api.giga.gs/getUploadUrl?token=$token</code>
             <h4>UPLOADING FILE</h4>
-            <p><code>$token</code> adn <code>$uploadServer</code> to be determine.</p>
+            <h6>Example:</h6>
             <code>$ curl -F file=@"/path/of/your/file.mp4" https//$uploadServer.giga.gs/upload?token=$token</code>
             <br/>
             <code>$ curl -F file=@"/path/to/your/file.mp4" https://$uploadServer.giga.gs/upload -H 'token: $token'</code>
