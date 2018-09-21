@@ -87,7 +87,7 @@ upload.prepareDropzone = function(uploadUrl){
 		}
 		else {
 			var p = document.createElement('p');
-			p.innerHTML = response.error;
+			p.innerHTML = response.text;
 			file.previewTemplate.querySelector('.link').appendChild(p);
 		}		
 	});
