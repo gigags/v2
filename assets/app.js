@@ -37,7 +37,7 @@ upload.prepareUpload = function(){
 	});	
 	
 	if(!upload.isPrivate) {
-		document.getElementById('loginToUpload').style.display = 'block'
+		//document.getElementById('loginToUpload').style.display = 'block'
 	}
 };
 
