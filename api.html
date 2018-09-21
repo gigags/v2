@@ -35,14 +35,13 @@
         <div class="content">
           <h2 class="title">API</h2>
           <div class="box">
-            <h4>UPLOAD REQUEST</h4>
-            <p>The base URL to upload your file is <code>https://api.giga.gs/upload</code> provided with the public or your private <code>token</code>.</p>
-            <p>The <code>token</code> can be use in HEADER / POST / GET parameter</p>
-            <h4>BASIC EXAMPLE</h4>
-            <p><code>$token</code> as variable.</p>
-            <code>$ curl -F file=@"/path/of/your/file.mp4" https//api.giga.gs/upload?token=$token</code>
+            <h4>REQUESTING UPLOAD URL</h4>
+            <p>The basic method to upload a file is to get the upload URL by requesting <code>https://api.giga.gs/getUploadUrl</code> provided with the public or your private <code>token</code>.</p>
+            <h4>UPLOADING FILE</h4>
+            <p><code>$token</code> adn <code>$uploadServer</code> to be determine.</p>
+            <code>$ curl -F file=@"/path/of/your/file.mp4" https//$uploadServer.giga.gs/upload?token=$token</code>
             <br/>
-            <code>$ curl -F file=@"/path/to/your/file.mp4" https://api.giga.gs/upload -H 'token: $token'</code>
+            <code>$ curl -F file=@"/path/to/your/file.mp4" https://$uploadServer.giga.gs/upload -H 'token: $token'</code>
             <br/><br/>
             <a class="button is-info" href="//api.giga.gs/session" target="_blank">GET TOKEN</a>            
             <hr/>
