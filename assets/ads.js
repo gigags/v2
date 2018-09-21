@@ -1,0 +1,1 @@
+var allowads = 1;
