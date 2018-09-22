@@ -36,20 +36,29 @@
           <div class="box">
             <h2 class="title">API</h2>
             <p>Note: String begin with <code>$</code> is to be determine, a variable.</p>
-            <hr/>
+            <hr/>            
+            
             <h4>Requesting upload URL</h4>
             <p>The basic method to upload a file is to get the upload URL by requesting <code>https://api.giga.gs/getUploadUrl</code> provided with the public or your private <code>token</code>.</p>
             <code>$ curl https//api.giga.gs/getUploadUrl?token=$token</code> click here to get <a href="//api.giga.gs/session" target="_blank">public token</a>
             <hr/>
+            
             <h4>Uploading a file</h4>            
             <code>$ curl -F file=@"/path/of/your/file.mp4" https//$uploadServer.giga.gs/upload?token=$token</code>
             <br/>or<br/>
-            <code>$ curl -F file=@"/path/to/your/file.mp4" https://$uploadServer.giga.gs/upload -H 'token: $token'</code>                      
+            <code>$ curl -F file=@"/path/to/your/file.mp4" https://$uploadServer.giga.gs/upload -H 'token: $token'</code>  
             <hr/>
+            
             <h4>Upload response format</h4>
             <p>Please take note: If response <code>success</code> is <code>true</code>, the <code>url</code> will be replaced by a direct link of the uploaded file.</p>
             <p>See: <a href="//api.giga.gs/upload" target="_blank">upload response</a></p>
             <hr/>
+            
+            <h4>Creating private token</h4>
+            <code>$ curl https://api.giga.gs/createtoken -d username=youraka -d password=yourpass</code>
+            <p>Creating private token must be requested using POST method.</p>
+            <hr/>
+            
             <p>Additional API information available soonest. Check back regularly.</p>
             <p>If you love this idea, help us maintain the server using bitcoin address: 1Mz6wuvQCTDb5CmtG91hCykEtHjt7Vd1wA</p>
           </div>
