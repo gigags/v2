@@ -50,13 +50,24 @@
             <hr/>
             
             <h4>Upload response format</h4>
-            <p>Please take note: If response <code>success</code> is <code>true</code>, the <code>url</code> will be replaced by a direct link of the uploaded file.</p>
             <p>See: <a href="//api.giga.gs/upload" target="_blank">upload response</a></p>
+            <p>Please take note: If response <code>success</code> is <code>true</code>, the <code>url</code> will be replaced by a direct link of the uploaded file.</p>
             <hr/>
             
             <h4>Creating private token</h4>
             <code>$ curl https://api.giga.gs/createtoken -d username=youraka -d password=yourpass</code>
             <p>Creating private token must be requested using POST method.</p>
+            <hr/>
+            
+            <h4>Verifying private token</h4>
+            <p>Verifying your private token in several ways using POST/GET method.</p>
+            <code>$ curl https://api.giga.gs/sesion -d username=youraka -d password=yourpass</code>
+            <br/>or<br/>
+            <code>$ curl https://api.giga.gs/sesion?username=youraka&amp;password=yourpass</code>
+            <br/>or<br/>
+            <code>$ curl https://api.giga.gs/sesion -d token=yourPrivateToken</code>
+            <br/>or<br/>
+            <code>$ curl https://api.giga.gs/sesion?token=yourPrivateToken</code>            
             <hr/>
             
             <p>Additional API information available soonest. Check back regularly.</p>
