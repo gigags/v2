@@ -55,15 +55,19 @@
             <hr/>
             
             <h4>Creating private token</h4>
-            <code>$ curl https://api.giga.gs/createtoken -d username=youraka -d password=yourpass</code>
+            <code>$ curl https://api.giga.gs/createtoken -d username=$user -d password=$pass</code>
             <p>Creating private token must be requested using POST method.</p>
             <hr/>
             
             <h4>Verifying private token</h4>
             <p>Verifying your private token in several ways using POST/GET method.</p>
-            <code>$ curl https://api.giga.gs/session -d username=youraka -d password=yourpass</code>
+            <code>$ curl https://api.giga.gs/session -d username=$user -d password=$pass</code>
             <br/>or<br/>
-            <code>$ curl https://api.giga.gs/session -d token=yourPrivateToken</code>       
+            <code>$ curl https://api.giga.gs/session -d token=$token</code>       
+            <hr/>
+            
+            <h4>Retrieving files</h4>
+            <code>$ curl https://api.giga.gs/getfiles -d token=$token</code>       
             <hr/>
             
             <p>Additional API information available soonest. Check back regularly.</p>
