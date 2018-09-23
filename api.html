@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta name="description" content="free gigabit servers dedicated for streaming mp4 files.">
-    <meta name="keywords" content="free,upload,video,mp4,streaming">
+    <meta name="description" content="giga.gs API - free gigabit servers dedicated for streaming mp4 files.">
+    <meta name="keywords" content="api,free,upload,video,mp4,streaming">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="apple-mobile-web-app-title" content="giga.gs">
     <meta name="application-name" content="giga.gs">
     <meta name="theme-color" content="#ffffff">
-    <meta property="og:url" content="https://giga.gs" />
+    <meta property="og:url" content="https://giga.gs/api" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="giga.gs - free gigabit servers dedicated for streaming mp4 files." />
+    <meta property="og:title" content="giga.gs API - free gigabit servers dedicated for streaming mp4 files." />
     <meta property="og:description" content="free gigabit servers dedicated for streaming mp4 files." />
     <meta property="og:image" content="/icon128.png" />
     <meta property="og:image:secure_url" content="/icon128.png" />
@@ -35,7 +35,7 @@
         <div class="content">
           <div class="box">
             <h2 class="title">API</h2>
-            <p>Note: String begin with <code>$</code> is to be determine, a variable.</p>
+            <p>Basic Developer's Guide</p>
             <hr/>            
             
             <h4>Requesting upload URL</h4>
@@ -54,8 +54,9 @@
             <p>Please take note: If response <code>success</code> is <code>true</code>, the <code>url</code> will be replaced by a direct link of the uploaded file.</p>
             <hr/>
             
-            <h4>Creating private token</h4>
+            <h4>Creating private token</h4>            
             <code>$ curl https://api.giga.gs/createtoken -d username=$user -d password=$pass</code>
+            <br/>
             <p>Creating private token must be requested using POST method.</p>
             <hr/>
             
@@ -74,7 +75,7 @@
             <code>$ curl https://api.giga.gs/getfiles -d token=$token -d page=$page -d limit=$limit</code>
             <hr/>
             
-            <p>Additional API information available soonest. Check back regularly.</p>
+            <p>Additional API information may available anytime. Please check back regularly.</p>
             <p>If you love this idea, help us maintain the server using bitcoin address: 1Mz6wuvQCTDb5CmtG91hCykEtHjt7Vd1wA</p>
           </div>
         </div>
