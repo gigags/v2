@@ -78,7 +78,10 @@
             <h4>Removing files</h4>
             <code>$ curl https://api.giga.gs/archive -d token=$token -d filehash=$filehash</code>
             <br/>
-            <p>Files set to archive are deleted in hard drives but file information remains for 30 days.</p>
+            <p><code>$filehash</code> is a combination of video <code>id</code> and <code>hash</code> information, see /getfiles</p>
+            <p>Example, of a filehash video id concatenated with hash using underscore <code>GxmRGg969aWaRgJO_f70c7a4c85dbd0fcdf40aa8e6942f80c</code> </p>
+            <code>$ curl https://api.giga.gs/archive -d token=$token -d filehash=GxmRGg969aWaRgJO_f70c7a4c85dbd0fcdf40aa8e6942f80c</code>
+            <p>Files set to archive are deleted in hard drive, but file information remains for 30 days.</p>
             <hr/>
             
             <p>This page is actively maintain. Additional API information may available anytime. You may check back regularly.</p>
